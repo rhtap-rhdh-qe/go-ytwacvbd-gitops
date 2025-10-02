@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-ytwacvbd-gitops
+  description: This is GitOps manifest for go-ytwacvbd   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-ytwacvbd
+    backstage.io/kubernetes-id: go-ytwacvbd 
+    backstage.io/techdocs-ref: dir:.
+    dev.azure.com/project-repo: rhtap-rhdh-qe/go-ytwacvbd-gitops
+    dev.azure.com/project: shared-public
+    dev.azure.com/build-definition: rhtap-rhdh-qe.go-ytwacvbd-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-ytwacvbd
